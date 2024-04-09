@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="increase">Increase</button><br><br>
+    <button id="decrease">Decrease</button><br><br>
+    <button id="reset">Reset</button><br><br>
+    <p>Counter:</p>
+    <p id="counter">0</p>
+
+    <script>
+        const increase = document.getElementById('increase')
+        const decrease = document.getElementById('decrease')
+        const reset = document.getElementById('reset')
+        const counter = document.getElementById('counter')
+
+increase.addEventListener('click', () => {
+    counter.innerText = parseInt(counter.innerText) + 1
+})
+
+decrease.addEventListener('click', () => { 
+    counter.innerText = parseInt(counter.innerText) - 1
+})
+
+reset.addEventListener('click', () => {
+    counter.innerText = 0
+})
+    </script>
+    <style>
+
+        body{ 
+            text-align: center;
+            background-color: blue;
+        }
+        button{
+            padding: 30px 40px;
+            border-radius: 6px;
+            background-color: aqua;
+            font-size: 15px;
+            
+            
+            ;
+            
+        }
+    </style>
+</body>
+</html>
