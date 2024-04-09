@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="data"></div>
+    <script>
+        fetch('http://localhost:3000/posts').then(
+    response => response.json()).then(
+    data => {
+        const postsDiv = document.getElementById('data');
+        data.forEach(post => {
+            const postDiv = document.createElement('div');
+            postDiv.classList.add("card");
+            postDiv.innerHTML = `<h2>${post.title}</h2><p>Views: ${post.views}</p>`;
+            postsDiv.appendChild(postDiv);
+        });
+    });
+    </script>
+    <style>
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</body>
+
+</html>
